@@ -10,6 +10,6 @@ router.get("/user-only", protect, (req, res) => {
 
 router.get("/admin-only", protect, authorize("admin"), (req, res) => {
   res.json({ success: true, message: "Welcome Admin!", data: req.user });
-});
+}); 
 
 module.exports = router;

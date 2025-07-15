@@ -6,7 +6,8 @@ const rateLimit = require("express-rate-limit");
 const testRoutes = require("./test/testRoutes");
 const authRoutes = require("./auth/authRoutes");
 const { errorHandler } = require("./middlewares/errorMiddleware");
-
+const userRoutes = require("./user/userRoutes");
+const adminRoutes = require("./admin/adminRoutes");
 const app = express();
 
 // ✅ Security & sanitization middlewares
@@ -25,7 +26,8 @@ app.use(limiter);
 // ✅ Routes
 app.use("/api/test", testRoutes);
 app.use("/api/auth", authRoutes);
-
+app.use("/api/user", userRoutes);
+app.use("/api/admin", adminRoutes);
 // ✅ Final error handler (must be last)
 app.use(errorHandler); // <- From your errorMiddleware.js
 
