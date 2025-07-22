@@ -109,22 +109,3 @@ docker build -t express-auth-app .
 Ahsan Farooq – Backend Intern @ Kaizen Global
 Feel free to contribute or suggest improvements!
 ```
-
-git commit -m "feat(wallet): implement wallet module with user/admin endpoints, filtering, aggregation, and RBAC support
-
-Closes #12 #13
-
-- Added Wallet model with blockchain enum (modularized into /constants)
-- Dockerized the backend express app.
-- Implemented CRUD endpoints for users to add, list (with pagination, filtering, search), and delete wallets
-- Integrated admin endpoint to fetch all wallets with full control: filtering, sorting, pagination
-- Added both .populate() and aggregation-based queries for performance comparison
-- Applied logging with chalk logger in services and controllers
-- Enforced uniqueness of (user, walletAddress, blockchain) combination
-- Indexed walletAddress and blockchain fields for query optimization
-- Refactored wallet routes, controllers, and services to align with clean architecture
-- Centralized blockchain enum in a reusable module
-- Added execution timing using console.time for analytics and debugging
-- Updated rate limiter to restrict 5 requests per 5 minutes
-- Followed clean coding practices and modular structure for scalability
-- Ready for PR merge after review"
