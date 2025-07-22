@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const userService = require("./userService");
+const userService = require("../services/userService");
 
 exports.getUserProfile = asyncHandler(async (req, res) => {
   const profile = await userService.fetchUserProfile(req.user.id);

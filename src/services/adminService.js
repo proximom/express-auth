@@ -1,4 +1,4 @@
-const User = require("../user/userModel");
+const User = require("../models/userModel");
 
 exports.fetchDashboardStats = async () => {
   // Mocked values; replace with real aggregation later

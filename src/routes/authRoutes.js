@@ -4,11 +4,11 @@ const {
   login,
   refresh,
   logout,
-} = require("./authController");
+} = require("../controllers/authController");
 const {
   validateRegister,
   validateLogin,
-} = require("./authValidation");
+} = require("../middlewares/authValidation");
 const { protect } = require("../middlewares/authMiddleware");
 
 const router = express.Router();

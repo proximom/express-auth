@@ -1,4 +1,4 @@
-const User = require("./userModel");
+const User = require("../models/userModel");
 
 exports.fetchUserProfile = async (id) => {
   return await User.findById(id).select("-password -refreshTokens");

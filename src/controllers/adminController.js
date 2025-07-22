@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const adminService = require("./adminService");
+const adminService = require("../services/adminService");
 
 exports.getDashboardStats = asyncHandler(async (req, res) => {
   const stats = await adminService.fetchDashboardStats();

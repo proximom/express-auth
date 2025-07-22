@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("../user/userModel");
+const User = require("../models/userModel");
 const { JWT_SECRET, JWT_EXPIRES_IN } = process.env;
 
 exports.registerUser = async ({ name, email, password, role }) => {
@@ -37,7 +37,7 @@ exports.loginUser = async ({ email, password }) => {
 
   console.log(`[SERVICE] Credentials verified for email: ${email}`);
 
-  const accessToken = generateToken({ id: user._id, role: user.role }, "15m");
+  const accessToken = generateToken({ id: user._id, role: user.role }, "1d");
   const refreshToken = generateToken({ id: user._id }, "7d");
 
   user.refreshTokens.push(refreshToken);
@@ -60,7 +60,7 @@ exports.refreshAccessToken = async (refreshToken) => {
     throw new Error("Invalid refresh token");
   }
 
-  const newAccessToken = generateToken({ id: user._id, role: user.role }, "15m");
+  const newAccessToken = generateToken({ id: user._id, role: user.role }, "1d");
   console.log(`[SERVICE] New access token generated for userId: ${user._id}`);
 
   return newAccessToken;
