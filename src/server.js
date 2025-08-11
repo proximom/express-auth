@@ -19,7 +19,13 @@ function getLocalIP() {
   }
   return "localhost";
 }
-
+// app.post("/ozow/notify", (req, res) => {
+//     console.log("✅ Ozow Notify Received:", req.body); // Log everything
+//     res.status(200).json({
+//         message: "Notify received",
+//         data: req.body,
+//     });
+// });
 // Mount health check route BEFORE starting app
 app.get("/ping", (req, res) => {
   res.status(200).json({ message: "✅ Server is alive!" });

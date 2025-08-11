@@ -26,7 +26,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/wallets", walletRoutes);
-// POST /ozow/notify
+POST /ozow/notify
 app.post("/ozow/notify", (req, res) => {
     console.log("✅ Ozow Notify Received:", req.body); // Log everything
     res.status(200).json({
